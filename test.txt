@@ -1,0 +1,4 @@
+Creating a new file
+We can create a new File using File.new() method for reading, writing or for both, according to the mode string. we can use fileobject.close() method to close that file.
+Writing to the file
+With the help of syswrite method, you can write content into a file. File needs to be opened in write mode for this method.The new content will over write the old content in an already existing file.
