@@ -1,29 +1,37 @@
-= Email Service Implementation Checklist
+= Trying out Ruby
+- Love the syntax ❤️
 
-Below is a table of the main features and components to be implemented for your email service, including their descriptions and status indicators (with checkboxes for completion tracking).
+.TODO
+[ ] Add a UI using ruby on rails
+[ ] Make faster
 
-[cols="3,4,1", options="header", frame="all"]
-|===
-| Feature                         | Description                                                                                   | Status
 
-| Server Setup                    | Provision VM, configure DNS records (A, MX, PTR, SPF, DKIM, DMARC)                             | [ ] Not Started
-| SMTP Server (Go)                | Implement SMTP server based on RFC 5321, handle email sending/relaying, queue management        | [ ] Not Started
-| TLS for SMTP                    | Implement STARTTLS using Go’s crypto/tls package, enforce secure email sending                 | [ ] Not Started
-| SPF Check                       | Implement SPF validation to prevent email spoofing                                             | [ ] Not Started
-| IMAP Server (Go)                | Build IMAP server based on RFC 3501, implement folder management, email fetching/syncing        | [ ] Not Started
-| POP3 Server (Go)                | Build POP3 server based on RFC 1939, handle email download and local deletion                  | [ ] Not Started
-| TLS for IMAP/POP3               | Implement SSL/TLS for encrypted IMAP/POP3 communication                                       | [ ] Not Started
-| Email Storage (Ruby)            | Store emails in Maildir format or relational database, handle email parsing (Mail library)     | [ ] Not Started
-| Webmail Client (Ruby)           | Optional: Build a webmail interface with Ruby on Rails, integrate email composition/sending    | [ ] Not Started
-| DKIM Implementation             | Implement DKIM signature to verify the authenticity of outgoing emails                        | [ ] Not Started
-| DMARC Implementation            | Configure DMARC policies to control handling of failed SPF/DKIM emails                        | [ ] Not Started
-| Anti-Spam                       | Integrate SpamAssassin for filtering incoming spam                                            | [ ] Not Started
-| Anti-Virus                      | Scan incoming/outgoing emails for viruses                                                     | [ ] Not Started
-| Email Filters and Auto-Responders| Implement customizable email filters, support for auto-responders                             | [ ] Not Started
-| Email Forwarding                | Allow users to set up forwarding rules                                                        | [ ] Not Started
-| Monitoring & Logging            | Set up monitoring for server performance, email queues, logs, and connection failures         | [ ] Not Started
-| Backup and Maintenance          | Implement automated backups, regular security updates                                         | [ ] Not Started
-| Testing & Validation            | Test compatibility with popular clients, validate SPF/DKIM/DMARC using online tools           | [ ] Not Started
-| Documentation                   | Create user guides, setup manuals, troubleshooting documentation                              | [ ] Not Started
-| Deployment                      | Deploy to production with CI/CD pipelines and automated testing                               | [ ] Not Started
-|===
+// = Email Service Implementation Checklist
+
+// Below is a table of the main features and components to be implemented for your email service, including their descriptions and status indicators (with checkboxes for completion tracking).
+
+// [cols="3,4,1", options="header", frame="all"]
+// |===
+// | Feature                         | Description                                                                                   | Status
+
+// | Server Setup                    | Provision VM, configure DNS records (A, MX, PTR, SPF, DKIM, DMARC)                             | [ ] Not Started
+// | SMTP Server (Go)                | Implement SMTP server based on RFC 5321, handle email sending/relaying, queue management        | [ ] Not Started
+// | TLS for SMTP                    | Implement STARTTLS using Go’s crypto/tls package, enforce secure email sending                 | [ ] Not Started
+// | SPF Check                       | Implement SPF validation to prevent email spoofing                                             | [ ] Not Started
+// | IMAP Server (Go)                | Build IMAP server based on RFC 3501, implement folder management, email fetching/syncing        | [ ] Not Started
+// | POP3 Server (Go)                | Build POP3 server based on RFC 1939, handle email download and local deletion                  | [ ] Not Started
+// | TLS for IMAP/POP3               | Implement SSL/TLS for encrypted IMAP/POP3 communication                                       | [ ] Not Started
+// | Email Storage (Ruby)            | Store emails in Maildir format or relational database, handle email parsing (Mail library)     | [ ] Not Started
+// | Webmail Client (Ruby)           | Optional: Build a webmail interface with Ruby on Rails, integrate email composition/sending    | [ ] Not Started
+// | DKIM Implementation             | Implement DKIM signature to verify the authenticity of outgoing emails                        | [ ] Not Started
+// | DMARC Implementation            | Configure DMARC policies to control handling of failed SPF/DKIM emails                        | [ ] Not Started
+// | Anti-Spam                       | Integrate SpamAssassin for filtering incoming spam                                            | [ ] Not Started
+// | Anti-Virus                      | Scan incoming/outgoing emails for viruses                                                     | [ ] Not Started
+// | Email Filters and Auto-Responders| Implement customizable email filters, support for auto-responders                             | [ ] Not Started
+// | Email Forwarding                | Allow users to set up forwarding rules                                                        | [ ] Not Started
+// | Monitoring & Logging            | Set up monitoring for server performance, email queues, logs, and connection failures         | [ ] Not Started
+// | Backup and Maintenance          | Implement automated backups, regular security updates                                         | [ ] Not Started
+// | Testing & Validation            | Test compatibility with popular clients, validate SPF/DKIM/DMARC using online tools           | [ ] Not Started
+// | Documentation                   | Create user guides, setup manuals, troubleshooting documentation                              | [ ] Not Started
+// | Deployment                      | Deploy to production with CI/CD pipelines and automated testing                               | [ ] Not Started
+// |===
