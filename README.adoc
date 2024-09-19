@@ -2,8 +2,8 @@
 - Love the syntax ❤️
 
 .TODO
-[ ] Add a UI using ruby on rails
-[ ] Make faster
+* [ ] Add a UI using ruby on rails
+* [ ] Make faster
 
 
 // = Email Service Implementation Checklist

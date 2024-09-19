@@ -1,0 +1,28 @@
+.TODO.footnote:disclaimer[I am not out of my depth.]
+[%interactive]
+* [ ] Understand how WAV and MP3 files are structured
+* [ ] Parse the files and experiment with differnet inputs
+
+.On Sample Points
+[cols=3*,options=header]
+|==
+|Sample Range
+|Data type
+|Name
+
+|1 - 8 bits wide
+|8-bit byte
+|unsigned char
+
+|9 - 16 bits wide
+|16-bit word
+|signed short
+
+|17 - 24 bits wide
+|3 bytes
+|bytes
+
+|25 - 32 bits wide
+|32-bit doubleword
+|signed long
+|==
