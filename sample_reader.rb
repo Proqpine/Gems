@@ -19,13 +19,26 @@ def process_fmt(audio, chunk_size)
   @bits_per_sample = bits_per_sample
 end
 
-def proess_data(_audio, chunk_size)
+def process_data(audio, chunk_size)
   number_of_samples = chunk_size / (@num_channels * (@bits_per_sample / 8))
   puts "\n|= data"
   puts "Number of Samples: #{number_of_samples}"
+
+  sample_format = case @bits_per_sample
+                  when 8 then 'C*'
+                  when 16 then 's<*'
+                  when 24 then 'C*'
+                  when 32 then 'l<*'
+                  else raise "Unsupported bits per sample: #{@bits_per_sample}"
+                  end
+  samples = audio.read(chunk_size).unpack(sample_format)
+
+  @num_channels.times do |channel|
+    puts "Channel #{channel + 1} first 5 samples: #{samples.each_slice(@num_channels).map { |s| s[channel] }.take(5)}"
+  end
 end
 
-File.open('c8hannel.wav', 'rb') do |audio|
+File.open('stop.wav', 'rb') do |audio|
   riff_id = audio.read(4)
   riff_size = audio.read(4).unpack1('L')
   wave_id = audio.read(4)
@@ -39,9 +52,11 @@ File.open('c8hannel.wav', 'rb') do |audio|
     case chunk_id
     when 'fmt '
       process_fmt(audio, chunk_size)
+    when 'data'
+      process_data(audio, chunk_size)
       break
     else
-      puts 'Dunno'
+      audio.seek(chunk_size, IO::SEEK_CUR)
     end
 
     next unless chunk_id == 'data'
@@ -51,9 +66,5 @@ File.open('c8hannel.wav', 'rb') do |audio|
     ch1, ch2 = wavedata.read(4).unpack1('ss')
     puts "CH1: #{ch1}, CH2: #{ch2}"
     break
-    # path = 'out.txt'
-    # File.open(path, 'a+') do |file|
-    #   file << "Chunk ID: #{chunk_id.inspect}, Chunk Size: #{chunk_size}\n"
-    # end
   end
 end
