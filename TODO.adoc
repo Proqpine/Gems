@@ -26,3 +26,13 @@
 |32-bit doubleword
 |signed long
 |==
+
+----
+Multichannel sounds are interleaved as below with sample points following after each other.
+----
+sample       sample              sample
+frame 0      frame 1             frame N
+_____ _____ _____ _____         _____ _____
+| ch1 | ch2 | ch1 | ch2 | . . . | ch1 | ch2 |
+|_____|_____|_____|_____|       |_____|_____|
+_____
