@@ -34,11 +34,11 @@ def process_data(audio, chunk_size)
   samples = audio.read(chunk_size).unpack(sample_format)
 
   @num_channels.times do |channel|
-    puts "Channel #{channel + 1} first 5 samples: #{samples.each_slice(@num_channels).map { |s| s[channel] }.take(5)}"
+    puts "Channel #{channel + 1} first 5 samples: #{samples.each_slice(@num_channels).map { |s| s[channel] }.take(10)}"
   end
 end
 
-File.open('stop.wav', 'rb') do |audio|
+File.open('sine_wave.wav', 'rb') do |audio|
   riff_id = audio.read(4)
   riff_size = audio.read(4).unpack1('L')
   wave_id = audio.read(4)

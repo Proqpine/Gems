@@ -1,5 +1,4 @@
 == TODO
-[%interactive]
 * [ ] Understand how WAV and MP3 files are structured
 * [ ] Parse the files and experiment with differnet inputs
 
@@ -32,6 +31,22 @@
 |signed long
 |l<*
 |===
+
+[cols=4*]
+|===
+|Standard SamplesPerSeconds/SampleRate (Hertz)
+|11025 KHz
+|22050 KHz
+|44100 KHz
+|===
+
+[source,ruby]
+----
+block_align = (@num_channels * (@bits_per_sample / 8) # Size of a sample frame in bytes
+# ByteRate
+avg_bytes_per_sec = sample_rate * block_align # Allows an application to determine how much RAM buffer needed to properly play WAVE without latency
+num_sample_frames = chunk_size / block_align
+----
 
 Multichannel sounds are interleaved as below with sample points following after each other.
 [source,xml]
